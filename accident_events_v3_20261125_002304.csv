@@ -1,0 +1,4 @@
+﻿event_number,ego_id,target_id,collision_frame,collision_sim_time_s,lidar_lead_s_unclassified,gt_lead_s_target_matched,raw_collision_callback_total
+1,240,156,1436218,71005.885,,2.6,1
+2,240,178,1484232,73406.585,,3.0,2
+3,240,169,1513232,74856.585,0.8,3.8,3
