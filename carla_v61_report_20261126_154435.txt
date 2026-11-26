@@ -1,0 +1,46 @@
+CARLA V6 測試報告
+================================================
+報告建立時間：2026-11-26 15:44:35
+測試啟動時間：2026-11-26 15:44:29
+追撞程式結束碼：0
+
+[監測資料]
+監測 CSV：integrated_carla_v61_gtposition_20261126_154429.csv
+事故事件 CSV：accident_events_v61_gtposition_20261126_154429.csv
+有效監測筆數：42
+模擬時間跨度：20.50 秒
+自動同步的 GT 目標 ID：57
+
+[預警統計]
+LiDAR warning 記錄筆數：3
+GT velocity warning 記錄筆數：0
+GT position warning 記錄筆數：7
+首次 LiDAR warning 模擬時間：1996.09 秒
+首次 GT warning 模擬時間：無
+最小 LiDAR TTC：1.000 秒
+最小 GT TTC：無有效估值
+
+[LiDAR / GT 配對評估]
+成功標記為 YES (GT-assisted) 的配對樣本：40
+配對距離誤差平均值：0.374 m
+配對距離誤差中位數：0.343 m
+
+[GT 目標位置狀態]
+FRONT_CORRIDOR：39
+DISABLED：3
+
+[碰撞事件]
+V5 碰撞感測器事件筆數：0
+V5 去重後事故計數：0
+本次沒有收到 V5 collision sensor 的碰撞事件回呼。
+
+[重要限制]
+本次 rear-contact cinematic 是程式控制車輛位置形成的幾何重疊，
+不是自然物理碰撞；因此不能以畫面接觸或幾何重疊宣稱碰撞感測器成功。
+只有事故事件 CSV 中實際記錄的 collision callback，才計入 V5 碰撞事件。
+LiDAR warning 是未識別障礙物的預警；GT / blind-zone 使用 CARLA Actor 真值，
+GT-assisted 配對屬於評估用途，不等於 LiDAR 單獨辨識出車輛 ID。
+
+GT position warning 是基於 Actor 位移的診斷警報，和速度向量 GT 分開。
+程式控制車輛的測試中，GT position warning 不可當成物理事故真值。
+本報告為本次模擬測試摘要，不代表道路實車驗證結果。

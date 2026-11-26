@@ -1,0 +1,23 @@
+﻿CARLA V6.2 LiDAR Shadow 對照分析（離線）
+==================================================
+輸入 CSV：integrated_carla_v62_shadow_20261126_165811.csv
+樣本筆數：1022
+原版 LiDAR WARNING 取樣：4；警報上升沿：2
+候選 Shadow WARNING 取樣：4；警報上升沿：2
+GT Position WARNING 取樣：11
+兩版本不同取樣：0（原版有／候選無：0；原版無／候選有：0）
+原版首次警報模擬時刻：27444.088433090597
+候選首次警報模擬時刻：27444.088433090597
+GT 首次警報模擬時刻：27113.088428158313
+
+候選模式樣本數：{'INSUFFICIENT_DATA': 929, 'NO_ORIGINAL_WARNING': 89, 'SHADOW_KEEP': 4}
+
+警報不同的取樣（最多 30 筆）：
+wall_s | sim_s | track_id | original | shadow | instant_mps | GT_pos_warn | shadow_mode
+
+解讀限制：
+1. Shadow 是離線候選策略，不影響實際 LiDAR WARNING、介面警報或 UDP。
+2. 與 GT 警報不一致不等於誤報；LiDAR Track 尚未必獨立識別對應的 NPC。
+3. 警報上升沿是依 CSV 記錄切分的候選事件，不等於物理事故。
+4. V6.1 原版已經用最近感測間隔排除 <=0.7m/s 接近速度；本版僅評估較保守的快速解除門檻。
+5. 不同場景、不同時間的 CSV 不能直接比較準確率。
